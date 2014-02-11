@@ -236,7 +236,6 @@ function Descriptor( word ){
         this.el.animate({ transform: "r360 "+this.attachment.options.x+" "+this.attachment.options.y }, this.options.speed, "bounce" );
     };
     this.moveTo = function( x, y ){
-        // clog(this.el[0])
         self.el[0].attr('cx', x);
         self.el[0].attr('cy', y);
         this._alignLabel();
@@ -244,7 +243,7 @@ function Descriptor( word ){
     return self;
 }
 
-// // Bond Object ------------------------------------------------------
+// Bond Object ------------------------------------------------------
 function Bond( x1, y1, x2, y2, opt_title, opt_extend ){
     this.id = null;
     this.el = null;
@@ -345,6 +344,9 @@ function Bond( x1, y1, x2, y2, opt_title, opt_extend ){
     };
 }
 
+// ------------------------------------------
+// Example usage ----------------------------
+
 function Linguistica( opt_reset ) {
     if( typeof opt_reset !== "undefined" ) {
         if( opt_reset ) util.clear( canvas.canvas );
@@ -369,8 +371,4 @@ function Linguistica( opt_reset ) {
         }
     }
     sentence.assemble( aEl[0].value );
-}
-
-window.onload = function(){
-    Linguistica();
 }
